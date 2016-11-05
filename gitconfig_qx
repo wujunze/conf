@@ -1,0 +1,32 @@
+[user]
+name = XXX
+email = xxx@xx.com
+[alias]
+logg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    co = checkout
+    ci = commit
+    st = status
+#    pu = pull origin develop 
+#    ps = push origin develop 
+   dt = difftool
+   lg = log --stat
+   cp = cherry-pick
+   ca = commit -a
+   br = branch
+[credential]
+	helper = store
+[core]
+	whitespace = cr-at-eol
+[color]
+	diff = auto
+	status = true
+  	branch = auto
+    interactive = auto
+    ui = auto
+    log = true
+[mergetool "vimdiff"]  #what?
+   cmd = "vim --noplugin \"$PWD/$MERGED\" \
+          +\":split $PWD/$REMOTE\" +\":set buftype=nowrite\" \
+          +\":vertical diffsplit $PWD/$LOCAL\" +\":set buftype=nowrite\" \
+          +\":vertical diffsplit $PWD/$BASE\" +\":set buftype=nowrite\" \
+          +\":wincmd l\""
